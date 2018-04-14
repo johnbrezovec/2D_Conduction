@@ -1,0 +1,46 @@
+CHE 350 Honors Option
+John Brezovec
+
+## README ##
+equations can be written in any order.
+temperature variables must be in the format <coefficient>T<index>
+"==" and "=" are interpreted indentically.
+assumes there are only two constant temperatures, To and Ti
+
+currently there are strict requirements for the leftside of each equation to
+represent the 'b' vector in m * x = b notation. Thus, there may only be one
+element on the leftside. If there are multiple elements only the last will be used.
+
+To Run: Edit the equations below, and then run the python script:
+	'multidim_conduction_solver.py'
+	the resulting solution is exported as 'solution.csv' into the working directory
+
+# CONSTANT # To = 30
+# CONSTANT # Ti = 230
+
+## START EQUATIONS ##
+To = T1
+0 == T1 + 2T5 + T3 - 4T2
+Ti = T3
+To = T4
+0 == T4 + T2 + T9 + T6 - 4T5
+0 == T5 + T3 + T7 + T10 - 4T6
+Ti == T7
+To == T8
+0 == T8 + T5 + T14 + T10 - 4T9
+0 == T9 + T15 + T6 + T11 - 4T10
+0 == T10 + T7 + T16 + T12 - 4T11
+Ti == T12
+To == T13
+0 == T13 + T9 + T19 + T15 - 4T14
+0 == T14 + T10 + T20 + T16 - 4T15
+0 == T15 + T11 + T21 + T17 - 4T16
+0 == 2T16 + T12 + T22 - 4T17
+To == T18
+0 == T18 + T20 + 2T14 - 4T19
+0 == T19 + T21 + 2T15 - 4T20
+0 == T20 + T22 + 2T16 - 4T21
+0 == 2T21 + 2T17 - 4T22
+## END ##
+
+anything after this point is not read
