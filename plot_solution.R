@@ -1,3 +1,6 @@
+# John Brezovec 2018
+# Visualization of 2-d conduction solutionsi
+
 library(tidyverse)
 
 # read in the necessary files
@@ -41,9 +44,10 @@ solution <- fix_symmetry(solution)
 # now plot
 plot <- solution %>%
   ggplot(mapping = aes(x = x, y = y, color = temperature)) +
-  geom_point(shape = 15, size = 15) +
+  geom_point(shape = 15, size = 18) +
   scale_colour_gradient(low = "blue", high = "red") +
   coord_fixed() +
   theme_void()
 
+# save the plot
 ggsave("plot.png", width = 6, height = 5)

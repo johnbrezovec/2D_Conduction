@@ -5,6 +5,7 @@ this file sets up and solves 2-d conduction project 4 for CHE 350, outputting
 the resulting temperature distribution in a csv file.
 """
 # importing needed modules
+import subprocess
 import numpy as np
 
 # open and read equations.txt file
@@ -87,3 +88,6 @@ with open("solution.csv", "w") as f:
     for row in solution:
         f.write(str(index) + ", " + str(row[0]) + "\n")
         index += 1
+
+# run the R script for visualization
+subprocess.check_call(['Rscript', 'plot_solution.R'], shell=False)
