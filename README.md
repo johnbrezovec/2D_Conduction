@@ -18,4 +18,4 @@ Currently, it is setup to accommodate 2-fold reflectional symmetry.
 ### example result
 the following solution was generated with a 50x50 nodal system (2500 equations).
 ![visualization example][example]
-[example]: https://github.com/johnbrezovec/2D_Conduction/blob/master/plot.png
+[example]: https://github.com/johnbrezovec/2D_Conduction/blob/master/plot.png "example"
