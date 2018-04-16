@@ -15,6 +15,7 @@ previous script, and solves the system using sparse matrix methods.
 **`plot_solution.R`** visualizes the solution to the given conduction problem.
 Currently, it is setup to accommodate 2-fold reflectional symmetry.
 
+---
 ### example result
 the following solution was generated with a 50x50 nodal system (2500 equations).
 ![visualization example](https://github.com/johnbrezovec/2D_Conduction/blob/master/plot.png "example")
