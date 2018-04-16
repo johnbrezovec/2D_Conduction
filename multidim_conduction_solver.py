@@ -7,6 +7,8 @@ the resulting temperature distribution in a csv file.
 # importing needed modules
 import subprocess
 import numpy as np
+from scipy.sparse import csc_matrix
+from scipy.sparse.linalg import spsolve
 
 # open and read equations.txt file
 with open('equations.txt', 'r') as f:
@@ -80,13 +82,16 @@ for n in range(len(raw_eq_list)):
             m_matrix[n, int(float(elem[1])) - 1] = float(elem[0])
 
 # now solve the equation
-solution = np.linalg.solve(m_matrix, b_vector)
+# convert m_matrix to sparse one
+m_matrix = csc_matrix(m_matrix)
+# solve with sparse techniques
+solution = spsolve(m_matrix, b_vector)
 # output the solution in a csv file
 with open("solution.csv", "w") as f:
     f.write("index, temperature\n")
     index = 1
     for row in solution:
-        f.write(str(index) + ", " + str(row[0]) + "\n")
+        f.write(str(index) + ", " + str(row) + "\n")
         index += 1
 
 # run the R script for visualization
