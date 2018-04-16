@@ -18,4 +18,5 @@ Currently, it is setup to accommodate 2-fold reflectional symmetry.
 ---
 ### example result
 the following solution was generated with a 50x50 nodal system (2500 equations).
+The left and right sides of the system are held at a constant 30ºC while the inner portion is held at 230ºC. Top and bottom are perfectly insulated.
 ![visualization example](https://github.com/johnbrezovec/2D_Conduction/blob/master/plot.png "example")
