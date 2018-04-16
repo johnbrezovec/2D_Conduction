@@ -24,8 +24,8 @@ The left and right sides of the system are held at a constant 30ºC while the in
 ---
 **dependencies:**
 
-  python: `numpy`, `scipy`, `subprocess`
+    >python: `numpy`, `scipy`, `subprocess`
 
-  R: `ggplot2`, `viridis`
+    >R: `ggplot2`, `viridis`
 
 _created for the honors option for CHE 350, John Brezovec_
