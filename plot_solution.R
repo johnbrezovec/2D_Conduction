@@ -2,6 +2,7 @@
 # Visualization of 2-d conduction solutions
 
 library(tidyverse)
+library(viridis)
 
 # read in the necessary files
 solution <- read_csv("solution.csv")
@@ -45,8 +46,8 @@ solution <- fix_symmetry(solution)
 plot <- solution %>%
   ggplot(mapping = aes(x = x, y = y, color = temperature)) +
   theme_void() +
-  geom_point(shape = 15, size = 5) +
-  scale_colour_gradient(low = "blue", high = "red") +
+  geom_point(shape = 15, size = 1.25) +
+  scale_color_viridis(option = "inferno") +
   coord_fixed()
 
 
