@@ -48,7 +48,13 @@ plot <- solution %>%
   theme_void() +
   geom_point(shape = 15, size = 1.25) +
   scale_color_viridis(option = "inferno") +
-  coord_fixed()
+  coord_fixed() +
+  theme(
+    legend.position = "bottom",
+    legend.justification = "right",
+    legend.margin = margin(0, 0, 0, 0),
+    legend.box.margin = margin(-20, 15, 0, 0)
+  )
 
 
 # save the plot
