@@ -1,5 +1,6 @@
 ---
 title: "2D Conduction by Finite Difference Method"
+author: "John Brezovec"
 date: "April 2018"
 output:
   html_document
