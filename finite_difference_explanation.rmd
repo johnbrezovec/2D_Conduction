@@ -2,8 +2,7 @@
 title: "2D Conduction by Finite Difference Method"
 date: "April 2018"
 output:
-  html_document:
-    keep_md: TRUE
+  html_document
 ---
 ```{r echo=FALSE, cached=TRUE}
 library(knitr)
