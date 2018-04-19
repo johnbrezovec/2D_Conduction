@@ -1,6 +1,7 @@
 # John Brezovec 2018
 # Visualization of 2-d conduction solutions
 
+## ---- plotSolution
 library(tidyverse)
 library(viridis)
 
@@ -56,6 +57,6 @@ plot <- solution %>%
     legend.box.margin = margin(-20, 15, 0, 0)
   )
 
-
+## ---- savePlot
 # save the plot
 ggsave("plot.png", width = 6, height = 5, bg = "transparent")

@@ -93,6 +93,40 @@ with open("solution.csv", "w") as f:
     for row in solution:
         f.write(str(index) + ", " + str(row) + "\n")
         index += 1
+# finding the heat transfer rate and the shape factor
+# first we need to read in the coordinates of the indicies
+# we can find the heat transfer rate in two ways, either look at the outside
+# or at the inside. Since the outside is flat this will be the easier one to do
 
+# pseudocode
+# read in the indicies and save those at x = 0
+outer_nodes = {}
+try:
+    with open('index_coordinates.csv') as f:
+        for line in f:
+            if 'index' in line:
+                continue
+            else:
+                split_line = [x.strip() for x in line.split(',')]
+                if split_line[1] == "0":
+                    outer_nodes[int(split_line[0])] = [None, None]
+except FileNotFoundError:
+    print("file index_coordinates.csv does not exist")
+
+# now we save the temperatures of the outer nodes as well as the temps of
+# the nodes to the right in order to get the delta-T
+for n in range(len(solution)):
+    if n + 1 in outer_nodes:
+        outer_nodes[n+1] = [solution[n], solution[n+1]]
+
+# now compute the heat transfer rate per unit length
+heat_xfer_rate = 0
+k = 54  # thermal conductivity of carbon steel
+for n in outer_nodes:
+    deltaT = outer_nodes[n][1] - outer_nodes[n][0]
+    heat_xfer_rate += k * deltaT
+# by symmetry you have to multiply it by 4
+heat_xfer_rate *= 4
+print(heat_xfer_rate)
 # run the R script for visualization
 subprocess.check_call(['Rscript', 'plot_solution.R'], shell=False)
