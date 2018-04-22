@@ -73,7 +73,7 @@ b = SparseArray[{{6}, {-4}, {27}}]
 LinearSolve[m, b]
 > {{5}, {3}, {-2}}
 ```
-Mathematica makes this easy, as if `LinearSolve` is given sparse matrices as inputs it will use sparse methods to solve the system. I've built a simple implementation in Python that automatically loads in the algebraic equations and builds the matrices, solves the system, and then passes it on to `R` to visualize. You can be find it on this project's [github](www.github.com/johnbrezovec/2D_Conduction).
+Mathematica makes this easy, as if `LinearSolve` is given sparse matrices as inputs it will use sparse methods to solve the system. I've built a simple implementation in Python that automatically loads in the algebraic equations and builds the matrices, solves the system, and then passes it on to `R` to visualize. You can be find it on this project's [github](https://www.github.com/johnbrezovec/2D_Conduction).
 
 5. If a more precise solution is desired, a more refined nodal system can be defined. For example, the solution from a system of 2290 nodes is visualized below:
 
@@ -98,4 +98,4 @@ $$S = 4.3$$
 Note that this unitless shape factor is relevant for finding the per-unit-length heat transfer rate, not total heat transfer rate (e.g. $\frac{Q}{L}$ not $Q$). Now with this shape factor we can find the heat transfer rates if the material or the imposed temperatures of the bar were altered.
 
 ***
-*John Brezovec 2018, hosted on [github](www.github.com/johnbrezovec/2D_Conduction)*
+*John Brezovec 2018, hosted on [github](https://www.github.com/johnbrezovec/2D_Conduction)*
