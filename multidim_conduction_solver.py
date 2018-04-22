@@ -98,7 +98,6 @@ with open("solution.csv", "w") as f:
 # we can find the heat transfer rate in two ways, either look at the outside
 # or at the inside. Since the outside is flat this will be the easier one to do
 
-# pseudocode
 # read in the indicies and save those at x = 0
 outer_nodes = {}
 try:
